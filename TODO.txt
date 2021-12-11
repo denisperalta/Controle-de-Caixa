@@ -1,0 +1,26 @@
+TODO
+- Criar filtro para 4 tipos de registro ok
+Pagamento 0
+Venda com nota 1
+Cheque emitido 2
+Cheque devolvido 3
+Deposito 4
+Inicial 5
+
+- Adicionar menu principal ok
+- Adicionar Combobox para design grafico ok
+- Aumentar as letras ok
+- Melhorar a estética
+- SEPARAR RELATORIO POSITIVO NEGATIVO URGENTE ok
+- Desabilitar janelas quando se abrem outras ok
+- Botão novo caixa em saldo ok
+- ao criar caixa. definir valor inicial ok
+- em relatorio por mes, calcular saldo ate fim do mes anterior ok
+- arrumar o COD no codesaldo para não precisar clicar a primeira vez (mostrar mensagem que não tem caixa selecionado) ok
+- URGENTE RESOLVER RESUMO SEM SALDO ANTERIOR ok
+- URGENTE COLOCAR SALDO INICIAL NO REGISTRO DE CAIXA ok
+
+pendente
+- mostrar saldo atual na janela de caixas
+- controlar por tipo, saldo negativo e positivo
+- colocar data do saldo inicial?

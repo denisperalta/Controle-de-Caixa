@@ -1,0 +1,10 @@
+Backup
+pg_dump -U postgres -C -f C:\Users\Usuario\Documents\Cheque\Backup.dump controlcheque
+
+Restore
+psql -U postgres < C:\Users\Usuario\Documents\Cheque\Backup.dump
+
+
+
+Cambiar .ui a .py
+pyuic4.bat -x filename.ui -o filename.py
