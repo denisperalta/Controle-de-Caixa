@@ -200,11 +200,11 @@ class listaseparadaApp(QtWidgets.QMainWindow, frmlistaseparada.Ui_frmlistasepara
             datachar = "to_char(a.data,'DD/MM/YYYY')"
             if bandera == 0:
                 cur.execute('select a.codmovimento, b.nomcaixa, a.valor, ' + datachar + ', a.descricao, a.tipo from movimento a, caixa b '
-                            'where a.codcaixa = b.codcaixa and a.codcaixa = ' + str(self.codcaixa) + ' and ' + self.tipo + 'order by a.data')
+                            'where a.codcaixa = b.codcaixa and a.codcaixa = ' + str(self.codcaixa) + ' and ' + self.tipo + 'order by a.data, a.valor')
 
             elif bandera == 1:
                 cur.execute('select a.codmovimento, b.nomcaixa, a.valor, ' + datachar + ', a.descricao, a.tipo from movimento a, caixa b '
-                            'where a.codcaixa = b.codcaixa and a.codcaixa = ' + str(self.codcaixa) + ' and ' + self.fecha + ' and ' + self.tipo + 'order by a.data')
+                            'where a.codcaixa = b.codcaixa and a.codcaixa = ' + str(self.codcaixa) + ' and ' + self.fecha + ' and ' + self.tipo + 'order by a.data, a.valor')
 
             self.movimento = cur.fetchall()
             self.negativo = 0
