@@ -1,5 +1,6 @@
 /dist
 /delete
+/build
 /.idea
-/_pycache_
+/__pycache__
 BackupSisCaixa.dump

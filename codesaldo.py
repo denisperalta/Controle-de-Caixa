@@ -53,13 +53,15 @@ class saldoApp(QtWidgets.QMainWindow, frmsaldo.Ui_frmsaldo):
 
     def configano(self):
         self.cboano.insertItem(0, '2021')
+        self.cboano.insertItem(1, '2022')
+        self.cboano.insertItem(2, '2023')
 
 
     def configmes(self):
         self.cbomes.setMaxVisibleItems(12)
         self.cbomes.insertItem(0, 'Janeiro')
         self.cbomes.insertItem(1, 'Fevereiro')
-        self.cbomes.insertItem(2, 'Março')
+        self.cbomes.insertItem(2, 'Marï¿½o')
         self.cbomes.insertItem(3, 'Abril')
         self.cbomes.insertItem(4, 'Maio')
         self.cbomes.insertItem(5, 'Junho')
@@ -73,7 +75,7 @@ class saldoApp(QtWidgets.QMainWindow, frmsaldo.Ui_frmsaldo):
     def resumo(self):
         cod = self.tabla.item(int(self.lblindice.text()), 0).text()
         if cod is None:
-            QtWidgets.QMessageBox.information(self, "Erro", "Não foi seleccionado um caixa para imprimir resumo!",
+            QtWidgets.QMessageBox.information(self, "Erro", "Nï¿½o foi seleccionado um caixa para imprimir resumo!",
                                               QtWidgets.QMessageBox.Ok)
         else:
 

@@ -3,6 +3,7 @@ import sys
 import os
 import frmmenu
 import time
+import subprocess
 from codeconexion import conexion
 
 
@@ -35,10 +36,12 @@ class menuApp(QtWidgets.QMainWindow, frmmenu.Ui_frmmenu):
 
     def closeEvent(self, evnt):
         self.conexion.conectar()
-        os.system(r'if not exist "C:\BackupSisCaixa\" mkdir C:\BackupSisCaixa')
+        os.system(r'if not exist "C:\BackupSisCaixa" mkdir C:\BackupSisCaixa')
         direccion = r'-f C:\BackupSisCaixa\BackupSisCaixa.dump siscaixa'
 
-        os.system(r'"C:\Program Files\PostgreSQL\13\bin\pg_dump.exe" -U postgres -C ' + direccion) # PC DENIS
+        file = r'"C:\Program Files\PostgreSQL\14\bin\pg_dump.exe"' #PC DENIS
+        subprocess.call(file + ' -U postgres -C ' + direccion)
+        # os.system("\"C:\\Program Files\\PostgreSQL\\13\\bin\\pg_dump.exe" -U postgres -C + direccion) # PC DENIS
         # os.system(r'"C:\Program Files\PostgreSQL\11\bin\pg_dump.exe" -U postgres -C ' + direccion)
 
         # try:

@@ -123,10 +123,9 @@ class caixaApp(QtWidgets.QMainWindow, frmcaixa.Ui_frmcaixa):
         if int(rows[0]) > 0:
             self.lblsinreg.setVisible(False)
             self.config(rows)
-            cur.execute('select a.codcaixa, a.nomcaixa, b.valor from caixa a, movimento b where b.tipo = 5 and a.codcaixa = b.codcaixa '
-                        'order by codcaixa asc')
+            cur.execute('select a.codcaixa, a.nomcaixa, b.valor from caixa a, movimento b where b.tipo = 5 and a.codcaixa = b.codcaixa order by codcaixa asc')
             self.caixa = cur.fetchall()
-
+            print(self.caixa[0])
             # cur.execute('select a.valor from movimento a, caixa b where a.tipo = 5 and a.codcaixa = b.codcaixa and a.codcaixa = %s', [cod])
             for i in range(int(rows[0])):
                 item = self.caixa[i]
