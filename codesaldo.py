@@ -55,6 +55,8 @@ class saldoApp(QtWidgets.QMainWindow, frmsaldo.Ui_frmsaldo):
         self.cboano.insertItem(0, '2021')
         self.cboano.insertItem(1, '2022')
         self.cboano.insertItem(2, '2023')
+        self.cboano.insertItem(3, '2024')
+        self.cboano.insertItem(4, '2025')
 
 
     def configmes(self):

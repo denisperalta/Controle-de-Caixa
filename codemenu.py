@@ -39,7 +39,7 @@ class menuApp(QtWidgets.QMainWindow, frmmenu.Ui_frmmenu):
         os.system(r'if not exist "C:\BackupSisCaixa" mkdir C:\BackupSisCaixa')
         direccion = r'-f C:\BackupSisCaixa\BackupSisCaixa.dump siscaixa'
 
-        file = r'"C:\Program Files\PostgreSQL\14\bin\pg_dump.exe"' #PC DENIS
+        file = r'"C:\Program Files\PostgreSQL\17\bin\pg_dump.exe"' #PC DENIS
         subprocess.call(file + ' -U postgres -C ' + direccion)
         # os.system("\"C:\\Program Files\\PostgreSQL\\13\\bin\\pg_dump.exe" -U postgres -C + direccion) # PC DENIS
         # os.system(r'"C:\Program Files\PostgreSQL\11\bin\pg_dump.exe" -U postgres -C ' + direccion)

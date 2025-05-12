@@ -236,9 +236,11 @@ class listaseparadaApp(QtWidgets.QMainWindow, frmlistaseparada.Ui_frmlistasepara
                     self.tabladebito.setItem(self.negativo, 5, QtWidgets.QTableWidgetItem(item[4]))
 
                     self.sumadebito = self.sumadebito + item[2]
+                    from codeformatnumber import format_number
+                    valor = format_number(self.sumadebito)
                     self.negativo = self.negativo + 1
                     self.lblsinregdebito.setVisible(False)
-                    self.lbltotaldebito.setText('TOTAL DEBITO: ' + str(self.sumadebito))
+                    self.lbltotaldebito.setText('TOTAL DEBITO: ' + str(valor))
 
                 else:
                     self.tablacredito.setItem(self.positivo, 0, QtWidgets.QTableWidgetItem(str(item[0])))
@@ -248,13 +250,17 @@ class listaseparadaApp(QtWidgets.QMainWindow, frmlistaseparada.Ui_frmlistasepara
                     self.tablacredito.setItem(self.positivo, 4, QtWidgets.QTableWidgetItem(self.txttipo))
                     self.tablacredito.setItem(self.positivo, 5, QtWidgets.QTableWidgetItem(item[4]))
                     self.sumacredito = self.sumacredito + item[2]
+                    from codeformatnumber import format_number
+                    valor = format_number(self.sumacredito)
                     self.positivo = self.positivo + 1
                     self.lblsinregcredito.setVisible(False)
-                    self.lbltotalcredito.setText('TOTAL CREDITO: ' + str(self.sumacredito))
+                    self.lbltotalcredito.setText('TOTAL CREDITO: ' + str(valor))
 
                 suma = suma + item[2]
                 self.suma = suma
-                self.lbltotal.setText('TOTAL: ' + str(suma))
+                from codeformatnumber import format_number
+                valor = format_number(self.suma)
+                self.lbltotal.setText('TOTAL: ' + str(valor))
         else:
             self.lblsinregcredito.setVisible(True)
             self.lblsinregdebito.setVisible(True)

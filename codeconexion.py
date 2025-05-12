@@ -9,13 +9,14 @@ class conexion():
 
     def conectar(self):
         try:
-            con = psycopg2.connect("host='localhost' dbname='siscaixa' user='postgres' password='motor'")
-            # con = psycopg2.connect("host='192.168.0.245' dbname='siscaixa' user='postgres' password='motor'") # Teste Server
+            # con = psycopg2.connect("host='localhost' dbname='siscaixa' user='postgres' password='82647913'") # Local    
+            con = psycopg2.connect("host='192.168.100.47' dbname='siscaixa' user='postgres' password='motor'") # Teste Server
             # con = psycopg2.connect("host='192.168.100.180' dbname='siscaixa' user='postgres' password='motor' connect_timeout=3") # Servidor SisCaixa
+            con.set_client_encoding('LATIN1')  # or 'WIN1252', depending on your data
 
             return con
         except psycopg2.OperationalError:
-            if easygui.ccbox('Não foi possível conectar ao servidor, restabeleça a conexão e clique em continuar', 'Erro de conexão'):
+            if easygui.ccbox('Nï¿½o foi possï¿½vel conectar ao servidor, restabeleï¿½a a conexï¿½o e clique em continuar', 'Erro de conexï¿½o'):
                 self.conectar()
             else:
                 sys.exit(0)
