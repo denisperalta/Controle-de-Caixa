@@ -41,45 +41,7 @@ class menuApp(QtWidgets.QMainWindow, frmmenu.Ui_frmmenu):
 
         file = r'"C:\Program Files\PostgreSQL\17\bin\pg_dump.exe"' #PC DENIS
         subprocess.call(file + ' -U postgres -C ' + direccion)
-        # os.system("\"C:\\Program Files\\PostgreSQL\\13\\bin\\pg_dump.exe" -U postgres -C + direccion) # PC DENIS
         # os.system(r'"C:\Program Files\PostgreSQL\11\bin\pg_dump.exe" -U postgres -C ' + direccion)
-
-        # try:
-        #
-        #     con = self.conexion.conectar()
-        #     cur = con.cursor()
-        #     cur.execute('select b.nom_banco, c.num_agencia, d.num_conta, a.num_cheque, a.valor, a.datacheque, '
-        #                 'e.nom_loja, a.pagado from cheque a, banco b, agencia c, conta d, loja e where '
-        #                 'a.cod_conta=d.cod_conta and d.cod_agencia=c.cod_agencia and c.cod_banco=b.cod_banco and '
-        #                 'a.cod_loja=e.cod_loja order by d.cod_conta, a.datacheque asc')
-        #     f = open(r'C:\BackupCheque\backupcheque.sql', 'w')
-        #     for row in cur:
-        #         f.write("insert into backup values (" + str(row) + ");")
-        # # except psycopg2.error as e:
-        # #     print(('Error %s' % e))
-        # #     sys.exit(1)
-        # finally:
-        #     if con:
-        # con.close()
-
-    # def imprimir(self):
-    #     from codepdf import pdf
-    #     pdf().generar(self.fechamin, self.fechamax, self.rows[0], self.cheque, 4, 0, 0, self.suma)
-
-    # def modifcheque(self):
-    #     item = self.cheque[int(self.lblindice.text())]
-    #     cod = item[0]
-    #     from coderegistro import registroApp
-    #     self.registro = registroApp(parent=self)
-    #     self.registro.show()
-    #     self.registro.iniciar(cod, self, 1)
-    #
-    #     # self.caller.txtcodprod.setText(unicode(item[0]))
-    #     # self.caller.txtnomprod.setText(item[1])
-    #     # self.caller.txtprecio.setText(unicode(item[3]))
-    #     # self.caller.txtcantidad.setFocus()
-    #     # self.caller.actualizar()
-    #     # self.close()
 
     def abrirmovimento(self):
         from codesaldo import saldoApp
